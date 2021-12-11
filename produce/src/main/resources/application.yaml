@@ -3,7 +3,7 @@ logging:
 spring:
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/lark
+    url: jdbc:postgresql://localhost:5432/larkland
     username: lark
     password: lark
     driverClassName: org.postgresql.Driver
