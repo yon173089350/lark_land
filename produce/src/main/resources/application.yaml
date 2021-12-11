@@ -1,0 +1,9 @@
+logging:
+  config: classpath:log4j2.xml
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/lark
+    username: lark
+    password: lark
+    driverClassName: org.postgresql.Driver

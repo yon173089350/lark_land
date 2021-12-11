@@ -1,4 +1,4 @@
-package land.lark.boot;
+package land.lark.produce;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
