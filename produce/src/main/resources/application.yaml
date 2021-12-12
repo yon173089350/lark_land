@@ -4,6 +4,6 @@ spring:
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/larkland
-    username: lark
-    password: lark
+    username: larkland
+    password: larkland
     driverClassName: org.postgresql.Driver

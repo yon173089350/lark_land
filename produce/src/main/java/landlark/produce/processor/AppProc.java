@@ -1,4 +1,4 @@
-package land.lark.produce.processor;
+package landlark.produce.processor;
 
 /**
  * AppProc
@@ -13,5 +13,5 @@ public interface AppProc {
      * @param paramString JSON format context
      * @return Object
      */
-	public Object process(String paramString);
+	public Object process(String req);
 }

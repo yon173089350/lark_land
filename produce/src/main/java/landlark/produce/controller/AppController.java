@@ -1,9 +1,10 @@
-package land.lark.produce.controller;
+package landlark.produce.controller;
 
 import java.util.Date;
 
-import land.lark.produce.processor.AppProc;
-import land.lark.produce.response.AppResp;
+import landlark.produce.processor.AppProc;
+import landlark.produce.response.AppResp;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,14 +32,14 @@ public class AppController {
     private ApplicationContext context;
 
     @PostMapping(value = "/{reqId}")
-    public ResponseEntity<AppResp> msgHandle(@PathVariable("reqId") String reqId, @RequestBody String msg) {
+    public ResponseEntity<AppResp> msgHandle(@PathVariable("reqId") String reqId, @RequestBody String req) {
 
         AppResp resp = new AppResp();
         resp.setStartTime(new Date());
         ResponseEntity<AppResp> respEntity = new ResponseEntity<>(resp, HttpStatus.OK);
 
         try {
-            resp.setContext(((AppProc) context.getBean(reqId + "Proc")).process(msg));
+            resp.setContext(((AppProc) context.getBean(reqId + "Proc")).process(req));
         } catch (BeansException ex) {
             resp.setErrCode("400");
             String errMsg = String.format("Request ID[%s] is not available", reqId);

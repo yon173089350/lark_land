@@ -1,7 +1,10 @@
-package land.lark.produce;
+package landlark;
+
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 /**
  * App
@@ -9,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author yonxu
  */
 @SpringBootApplication
+@MapperScan("landlark.entity.mapper")
 public class App {
 
     public static void main(String[] args) {
