@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="landlark.entity.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="landlark.entity.model.Message">
+    <id column="msg_id" jdbcType="VARCHAR" property="msgId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="create_datetime" jdbcType="TIMESTAMP" property="createDatetime" />
+    <result column="update_datetime" jdbcType="TIMESTAMP" property="updateDatetime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from message
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="landlark.entity.model.Message">
+    insert into message (msg_id, content, create_datetime, 
+      update_datetime, status)
+    values (#{msgId,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{createDatetime,jdbcType=TIMESTAMP}, 
+      #{updateDatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="landlark.entity.model.Message">
+    update message
+    set content = #{content,jdbcType=VARCHAR},
+      create_datetime = #{createDatetime,jdbcType=TIMESTAMP},
+      update_datetime = #{updateDatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=VARCHAR}
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select msg_id, content, create_datetime, update_datetime, status
+    from message
+    where msg_id = #{msgId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select msg_id, content, create_datetime, update_datetime, status
+    from message
+  </select>
+</mapper>

@@ -13,9 +13,9 @@ import java.util.Date;
 @Setter
 @Getter
 public class AppResp {
-	private String errCode;
-	private String errMsg;
+	private Date timestamp;
+	private int status;
+	private String error;
+	private String path;
 	private Object context;
-	private Date startTime;
-	private Date endTime;
 }

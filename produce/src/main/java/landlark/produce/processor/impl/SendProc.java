@@ -7,6 +7,9 @@ import landlark.produce.processor.base.Proc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+import java.util.UUID;
+
 @Component("sendProc")
 public class SendProc extends Proc implements AppProc {
     @Autowired
@@ -14,8 +17,18 @@ public class SendProc extends Proc implements AppProc {
 
     @Override
     public Object process(String req) {
-        Message message=new Message();
+
+        Date date=new Date();
+
+        String uuidAsString = UUID.randomUUID().toString();
+
+        Message message = new Message();
+        message.setMsgId(uuidAsString);
+        message.setCreateDatetime(date);
+        message.setUpdateDatetime(date);
         message.setContent(req);
-        return messageMapper.insert(message);
+        messageMapper.insert(message);
+
+        return uuidAsString;
     }
 }
