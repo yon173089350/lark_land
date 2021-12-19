@@ -1,0 +1,16 @@
+logging:
+  config: classpath:log4j2.xml
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/larkland
+    username: larkland
+    password: larkland
+    driverClassName: org.postgresql.Driver
+  jackson:
+    default-property-inclusion: NON_NULL
+server:
+  port: 8080
+consumer:
+  host: 127.0.0.1
+  port: 8081

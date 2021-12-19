@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="warn">
+	<Properties>
+		<Property name="log.path">log</Property>
+		<Property name="log.pattern"><![CDATA[%d{yyyy-MM-dd HH:mm:ss.SSS} - %-5p %-45c{1}: %m%n]]></Property>
+	</Properties>
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>${log.pattern}</Pattern>
+			</PatternLayout>
+		</Console>
+		<RollingFile name="ROLLING_FILE"
+			fileName="${log.path}/app.log"
+			filePattern="${log.path}/backup/app-%d{yyyy-MM-dd_HHmmss}.log.gz"
+			filePermissions="rw-r--r--">
+			<PatternLayout>
+				<Pattern>${log.pattern}</Pattern>
+			</PatternLayout>
+			<Filters>
+				<ThresholdFilter level="INFO" />
+			</Filters>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="24" modulate="false"/>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="ROLLING_FILE" />
+		</Root>
+	</Loggers>
+</Configuration>

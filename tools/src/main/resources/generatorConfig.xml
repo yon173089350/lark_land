@@ -16,6 +16,6 @@
         <javaClientGenerator
                 targetPackage="landlark.entity.mapper" targetProject="../entity/src/main/java"
                 type="XMLMAPPER"/>
-        <table tableName="message" catalog="public"/>
+        <table tableName="product" catalog="public"/>
     </context>
 </generatorConfiguration>
