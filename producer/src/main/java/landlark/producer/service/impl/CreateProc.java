@@ -1,4 +1,4 @@
-package landlark.producer.processor.impl;
+package landlark.producer.service.impl;
 
 import landlark.entity.mapper.ProductMapper;
 import landlark.entity.model.Product;
@@ -9,7 +9,6 @@ import landlark.producer.response.apimodel.CreateResp;
 import landlark.producer.service.AsyncServ;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +17,7 @@ import java.util.UUID;
 
 @Component("createProc")
 @Log4j2
-public class createProc extends Proc implements AppProc {
+public class CreateProc extends Proc implements AppProc {
     @Autowired
     ProductMapper productMapper;
 

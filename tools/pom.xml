@@ -16,12 +16,11 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>1.4.1</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.postgresql</groupId>
                         <artifactId>postgresql</artifactId>
-                        <version>${postgresql.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

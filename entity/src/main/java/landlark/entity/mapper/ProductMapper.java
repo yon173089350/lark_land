@@ -6,11 +6,11 @@ import landlark.entity.model.Product;
 public interface ProductMapper {
     int deleteByPrimaryKey(String uid);
 
-    int insert(Product record);
+    int insert(Product product);
 
     Product selectByPrimaryKey(String uid);
 
     List<Product> selectAll();
 
-    int updateByPrimaryKey(Product record);
+    int updateByPrimaryKey(Product product);
 }
