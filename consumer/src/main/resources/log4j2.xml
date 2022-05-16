@@ -2,6 +2,7 @@
 <Configuration status="warn">
 	<Properties>
 		<Property name="log.path">log</Property>
+		<Property name="log.app">consumer</Property>
 		<Property name="log.pattern"><![CDATA[%d{yyyy-MM-dd HH:mm:ss.SSS} - %-5p %-45c{1}: %m%n]]></Property>
 	</Properties>
 	<Appenders>
@@ -11,9 +12,9 @@
 			</PatternLayout>
 		</Console>
 		<RollingFile name="ROLLING_FILE"
-			fileName="${log.path}/app.log"
-			filePattern="${log.path}/backup/app-%d{yyyy-MM-dd_HHmmss}.log.gz"
-			filePermissions="rw-r--r--">
+					 fileName="${log.path}/${log.app}_app.log"
+					 filePattern="${log.path}/backup/${log.app}_app-%d{yyyy-MM-dd_HHmmss}.log.gz"
+					 filePermissions="rw-r--r--">
 			<PatternLayout>
 				<Pattern>${log.pattern}</Pattern>
 			</PatternLayout>
