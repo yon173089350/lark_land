@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -19,14 +20,14 @@ import java.util.UUID;
 @Log4j2
 public class CreateProc extends Proc implements AppProc {
     @Autowired
-    ProductMapper productMapper;
+    private ProductMapper productMapper;
 
     @Autowired
     AsyncServ asyncServ;
 
     @Override
     @Transactional
-    public Object process(String reqStr) throws InterruptedException {
+    public Object process(String reqStr) throws InterruptedException, IOException {
 
         super.init(reqStr, "create");
 

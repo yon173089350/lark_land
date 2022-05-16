@@ -41,11 +41,12 @@ public class AppController {
             resp.setContext(((AppProc) context.getBean(reqId + "Proc")).process(reqStr));
             resp.setStatus(HttpStatus.OK.value());
             respEntity = new ResponseEntity<>(resp, HttpStatus.OK);
-        } catch (Exception ex) {
+        } catch (InterruptedException ex) {
             resp.setStatus(HttpStatus.BAD_REQUEST.value());
             resp.setError(ex.getMessage());
             respEntity = new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
             log.error(ExceptionUtils.getStackTrace(ex));
+            Thread.currentThread().interrupt();
         }
 
         return respEntity;

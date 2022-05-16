@@ -1,5 +1,7 @@
 package landlark.producer.processor;
 
+import java.io.IOException;
+
 /**
  * AppProc
  * 
@@ -13,5 +15,5 @@ public interface AppProc {
      * @param paramString JSON format context
      * @return Object
      */
-	public Object process(String req) throws InterruptedException;
+	public Object process(String req) throws InterruptedException, IOException;
 }
