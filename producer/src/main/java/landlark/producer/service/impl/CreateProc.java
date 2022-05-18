@@ -23,7 +23,7 @@ public class CreateProc extends Proc implements AppProc {
     private ProductMapper productMapper;
 
     @Autowired
-    AsyncServ asyncServ;
+    private AsyncServ asyncServ;
 
     @Override
     @Transactional
