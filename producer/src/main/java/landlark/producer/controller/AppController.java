@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -41,7 +42,7 @@ public class AppController {
             resp.setContext(((AppProc) context.getBean(reqId + "Proc")).process(reqStr));
             resp.setStatus(HttpStatus.OK.value());
             respEntity = new ResponseEntity<>(resp, HttpStatus.OK);
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException | IOException ex) {
             resp.setStatus(HttpStatus.BAD_REQUEST.value());
             resp.setError(ex.getMessage());
             respEntity = new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
