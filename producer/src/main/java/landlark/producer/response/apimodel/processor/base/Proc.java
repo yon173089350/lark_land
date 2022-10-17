@@ -1,4 +1,4 @@
-package landlark.producer.processor.base;
+package landlark.producer.response.apimodel.processor.base;
 
 import com.google.gson.Gson;
 import org.everit.json.schema.Schema;

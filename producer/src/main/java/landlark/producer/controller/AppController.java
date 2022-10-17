@@ -1,6 +1,6 @@
 package landlark.producer.controller;
 
-import landlark.producer.processor.AppProc;
+import landlark.producer.response.apimodel.processor.AppProc;
 import landlark.producer.response.AppResp;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.exception.ExceptionUtils;

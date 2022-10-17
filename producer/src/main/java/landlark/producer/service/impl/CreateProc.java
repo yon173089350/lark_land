@@ -2,8 +2,8 @@ package landlark.producer.service.impl;
 
 import landlark.entity.mapper.ProductMapper;
 import landlark.entity.model.Product;
-import landlark.producer.processor.AppProc;
-import landlark.producer.processor.base.Proc;
+import landlark.producer.response.apimodel.processor.AppProc;
+import landlark.producer.response.apimodel.processor.base.Proc;
 import landlark.producer.request.apimodel.CreateReq;
 import landlark.producer.response.apimodel.CreateResp;
 import landlark.producer.service.AsyncServ;

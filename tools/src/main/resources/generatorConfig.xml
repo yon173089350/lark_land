@@ -3,6 +3,11 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <context id="simple" targetRuntime="MyBatis3Simple">
+
+        <plugin type="org.mybatis.generator.plugins.LombokPlugin">
+            <property name="hasLombok" value="true"/>
+        </plugin>
+
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
