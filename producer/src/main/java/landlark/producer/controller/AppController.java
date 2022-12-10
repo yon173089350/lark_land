@@ -1,5 +1,6 @@
 package landlark.producer.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import landlark.producer.response.apimodel.processor.AppProc;
 import landlark.producer.response.AppResp;
 import lombok.extern.log4j.Log4j2;
@@ -10,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
 
@@ -31,12 +31,8 @@ public class AppController {
     @PostMapping(value = "/{reqId}")
     public ResponseEntity<AppResp> msgHandle(@PathVariable("reqId") String reqId, @RequestBody String reqStr, HttpServletRequest request) {
 
-
-        AppResp resp = new AppResp();
+        AppResp resp = AppResp.builder().timestamp(new Date()).path(request.getServletPath()).build();
         ResponseEntity<AppResp> respEntity;
-
-        resp.setTimestamp(new Date());
-        resp.setPath(request.getServletPath());
 
         try {
             resp.setContext(((AppProc) context.getBean(reqId + "Proc")).process(reqStr));

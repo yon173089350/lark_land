@@ -1,7 +1,7 @@
 package landlark.producer.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -10,8 +10,8 @@ import java.util.Date;
  * 
  * @author yonxu
  */
-@Setter
-@Getter
+@Data
+@Builder
 public class AppResp {
 	private Date timestamp;
 	private int status;

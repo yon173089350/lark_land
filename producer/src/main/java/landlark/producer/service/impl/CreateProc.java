@@ -45,11 +45,9 @@ public class CreateProc extends Proc implements AppProc {
 
         productMapper.insert(product);
 
-        CreateResp resp = new CreateResp();
-        resp.setUid(uId);
+        CreateResp resp = CreateResp.builder().uid(uId).build();
         asyncServ.handleData();
         return resp;
     }
-
 
 }
