@@ -12,8 +12,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection
-                connectionURL="jdbc:postgresql://localhost:5432/larkland"
-                driverClass="org.postgresql.Driver" password="larkland" userId="larkland"/>
+                connectionURL="jdbc:postgresql://localhost:5432/lark"
+                driverClass="org.postgresql.Driver" password="lark" userId="lark"/>
         <javaModelGenerator targetPackage="landlark.entity.model"
                             targetProject="../entity/src/main/java"/>
         <sqlMapGenerator targetPackage="landlark.entity.mapper"
@@ -21,6 +21,6 @@
         <javaClientGenerator
                 targetPackage="landlark.entity.mapper" targetProject="../entity/src/main/java"
                 type="XMLMAPPER"/>
-        <table tableName="product" catalog="public"/>
+        <table tableName="monitor" catalog="public"/>
     </context>
 </generatorConfiguration>

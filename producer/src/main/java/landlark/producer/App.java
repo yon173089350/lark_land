@@ -1,4 +1,4 @@
-package landlark;
+package landlark.producer;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
