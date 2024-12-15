@@ -1,0 +1,94 @@
+/* JavaFX CSS for Eco-Friendly Styles */
+
+/* 全局字体和背景设置（可选） */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-background-color: #e8f5e9; /* 浅绿色背景，模拟草地或森林 */
+}
+
+/* Button 基本样式 */
+.button {
+    -fx-background-color: #a8e0a8; /* 绿色背景，代表生态 */
+    -fx-border-color: #6b8e23;     /* 棕色边框，模拟土壤或树干 */
+    -fx-border-width: 2px;         /* 边框宽度稍宽，突出自然感 */
+    -fx-border-radius: 8px;        /* 圆角半径，使按钮更柔和 */
+    -fx-background-radius: 8px;    /* 背景圆角与边框圆角一致 */
+    -fx-padding: 10px 20px;        /* 内边距 */
+    -fx-text-fill: #ffffff;        /* 白色文字，与绿色背景形成对比 */
+    -fx-font-size: 14px;           /* 字体大小 */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 3, 0, 0, 1); /* 轻微阴影，增强立体感 */
+}
+
+/* Button 悬停样式 */
+.button:hover {
+    -fx-background-color: #90c990; /* 悬停时更深的绿色背景 */
+}
+
+/* MenuButton 基本样式，与Button相似但稍作区分 */
+.menu-button {
+    -fx-background-color: #b8e8b8; /* 稍浅的绿色背景 */
+    -fx-border-color: #6b8e23;     /* 与Button相同的棕色边框 */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-text-fill: #333333;        /* 深灰色文字，与浅绿色背景形成对比 */
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+/* MenuButton 内的 MenuItem 基本样式 */
+.menu-button .menu-item {
+    -fx-background-color: #e8f5e9; /* 与全局背景相似的浅绿色 */
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-margin: 2px 0;
+}
+
+/* MenuItem 的 Label 样式 */
+.menu-button .menu-item .label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 13px;
+}
+
+/* MenuItem 悬停样式 */
+.menu-button .menu-item:hover {
+    -fx-background-color: #d0f0d0; /* 悬停时更深的浅绿色背景 */
+}
+
+/* TableView 基本样式 */
+.table-view {
+    -fx-background-color: #ffffff; /* 白色背景，使内容更清晰 */
+    -fx-border-color: #6b8e23;     /* 棕色边框，与按钮边框相呼应 */
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
+
+/* TableView 列头样式 */
+.table-view .column-header {
+    -fx-background-color: #c8e6c9; /* 淡绿色列头背景 */
+    -fx-border-color: #6b8e23;     /* 棕色列头边框 */
+    -fx-border-width: 0 0 2px 0;   /* 列头下边框稍宽 */
+    -fx-padding: 5px 10px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+/* TableView 单元格样式 */
+.table-cell {
+    -fx-padding: 5px 10px;
+    -fx-text-fill: #333333;
+    -fx-background-color: #f9f9f9; /* 浅灰色单元格背景，增强可读性 */
+}
+
+/* TableView 单元格悬停样式 */
+.table-cell:hover {
+    -fx-background-color: #e8f5e9; /* 悬停时淡绿色背景 */
+}
+
+/* TableView 选中行样式 */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #a8e0a8; /* 选中行绿色背景，与按钮背景相呼应 */
+    -fx-text-fill: #ffffff;        /* 白色文字，与绿色背景形成对比 */
+}

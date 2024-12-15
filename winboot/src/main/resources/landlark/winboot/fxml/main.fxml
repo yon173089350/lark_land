@@ -3,8 +3,9 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="main" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landlark.winboot.controller.MainController">
+<BorderPane fx:id="main" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landlark.winboot.controller.MainController">
 
     <left>
         <VBox>
@@ -12,23 +13,42 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
 
-            <MenuButton maxWidth="100" minWidth="100" text="Manual">
+            <MenuButton maxWidth="100" minWidth="150.0" text="Manual">
                 <items>
-                    <MenuItem mnemonicParsing="false" onAction="#onTransferFileClick" text="Transfer file" />
+                    <MenuItem onAction="#onTransferFileClick" text="Transfer file" />
                 </items>
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </VBox.margin>
             </MenuButton>
 
-            <MenuButton maxWidth="100" minWidth="100" text="Scheduler">
+            <MenuButton maxWidth="100" minWidth="150.0" text="Scheduler">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="Dashboard" />
-                    <MenuItem mnemonicParsing="false" text="Configuration" />
+                    <MenuItem text="Dashboard" />
+                    <MenuItem text="Configuration" />
                 </items>
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </VBox.margin>
             </MenuButton>
         </VBox>
     </left>
-
    <top>
-      <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" BorderPane.alignment="CENTER" />
+       <GridPane prefHeight="100.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+           </rowConstraints>
+           <Label text="Lable" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+              <font>
+                  <Font name="System Bold" size="18.0"/>
+              </font>
+           </Label>
+       </GridPane>
    </top>
 
 </BorderPane>

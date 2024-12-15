@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landlark.winboot.controller.manaul.TransferFileController">
+<VBox stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landlark.winboot.controller.manaul.TransferFileController">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
